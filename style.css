@@ -1,0 +1,78 @@
+/* style.css */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #fcfbfa; /* Warm white/tan background */
+    color: #4a3e3d;            /* Soft dark brown text */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Style*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 10%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0e6df;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #c4a482; /* Warm tan logo/name color */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 32px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #6e605f;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #9e9146; /* Light pink highlight on hover */
+}
+
+/* Main Content Area */
+main {
+    padding: 48px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1; /* This pushes footer to bottom! */
+}
+
+/* Option 1: Black Footer */
+footer {
+    background-color: #111111;
+    color: #ffffff;            
+    padding: 10px 1%;
+    text-align: center;
+    margin-top: 64px;
+}
+
+footer h1 {
+    font-size: 20px;
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #9e8e8d;
+}
