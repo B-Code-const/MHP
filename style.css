@@ -76,3 +76,24 @@ footer p {
     font-size: 14px;
     color: #9e8e8d;
 }
+
+
+
+
+/*journal /*
+/* Container for all entries */
+.entries-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 equal columns: Left and Right! */
+    gap: 20px;                      /* Spacing between the boxes */
+    margin-top: 20px;
+}
+
+/* Style for each single box card */
+.entry-card {
+    border: 1px solid #f0e6df;
+    padding: 20px;
+    background-color: #915f42;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
