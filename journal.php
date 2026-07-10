@@ -1,8 +1,12 @@
 <?php
 session_start(); 
 if (!empty($_POST['entry'])) {
+    $title = trim($_POST['title'] ?? '');
+    if ($title === '') {
+        $title = 'Untitled';
+    }
     $_SESSION['journal_entries'][] = [
-        'title' => htmlspecialchars($_POST['title']),
+        'title' => htmlspecialchars($title),
         'content' => htmlspecialchars($_POST['entry'])
     ];
 }
@@ -30,7 +34,8 @@ include 'includes/header.php';
             
             echo "<div class='entry-card'>";
             echo "<span style='float: right; font-size: 12px; color: #888;'>Entry #" . ($id + 1) . "</span>";
-            echo "<strong>" . $item['title'] . "</strong>";
+            $display_title = !empty($item['title']) ? $item['title'] : 'Untitled';
+            echo "<strong>" . $display_title . "</strong>";
             echo "<p style='margin-top: 10px;'>" . $item['content'] . "</p>";
             echo "</div>";
         }
