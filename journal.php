@@ -29,8 +29,9 @@ include 'includes/header.php';
         foreach (array_reverse($_SESSION['journal_entries'], true) as $id => $item) {
             
             echo "<div class='entry-card'>";
-            echo "<strong>Entry #" . ($id + 1) . ": " . $item['title'] . "</strong><br>";
-            echo "<p>" . $item['content'] . "</p>";
+            echo "<span style='float: right; font-size: 12px; color: #888;'>Entry #" . ($id + 1) . "</span>";
+            echo "<strong>" . $item['title'] . "</strong>";
+            echo "<p style='margin-top: 10px;'>" . $item['content'] . "</p>";
             echo "</div>";
         }
     } else {
