@@ -23,7 +23,12 @@ include 'includes/header.php';
         </h5>
         <input id = "title" name = "title" type="text" style="width: 100%;" placeholder="Title (Optional)">
         <textarea id="entry" name="entry" style="width: 100%; height: 200px; margin: 10px 0; padding: 15px;"></textarea>
+        <p>Mood Scale:</p>
+        <input type="range" name="mood" min="1" max="7" style="width: 100%; margin: 10px 0;">
+
+
         <button type="submit">Submit</button>
+
     </form>
 
     <h3>Previous Entries</h3>
