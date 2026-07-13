@@ -1,216 +1,274 @@
-/* style.css */
+/* style.css - Mindspace Design System */
 
-html,
-body {
-  height: 100%;
+:root {
+    --bg-base: #FFF9F5;       /* 60% Warm White */
+    --bg-card: #ffffff;       /* Pure White for cards/header */
+    --bg-supporting: #E8D8CA; /* 30% Light Tan */
+    --color-peach: #F2A69A;   /* Peach Pink */
+    --color-accent: #B94A50;  /* 10% Muted Red Accent */
+    --text-dark: #403235;     /* Dark text */
+    --text-muted: #6e605f;    /* Muted text */
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #fcfbfa; /* Warm white/tan background */
-  color: #4a3e3d; /* Soft dark brown text */
-  display: flex;
-  flex-direction: column;
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
 }
 
-/* Header Style*/
+/* Header Style */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 10%;
-  background-color: #ffffff;
-  border-bottom: 1px solid #f0e6df;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: var(--bg-card);
+    border-bottom: 2px solid var(--bg-supporting);
 }
 
 header h1 {
-  margin: 0;
-  font-size: 24px;
-  color: #c4a482; /* Warm tan logo/name color */
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-accent);
 }
 
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 32px;
 }
 
 nav a {
-  text-decoration: none;
-  color: #6e605f;
-  font-weight: 500;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding-bottom: 4px;
+    transition: color 0.3s, border-color 0.3s;
 }
 
-nav a:hover {
-  color: #9e9146; /* Light pink highlight on hover */
+nav a:hover, nav a.active {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
 }
 
 /* Main Content Area */
 main {
-  padding: 48px 10%;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex: 1; /* This pushes footer to bottom! */
+    padding: 48px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1; /* Pushes footer to bottom */
 }
 
-/* Option 1: Black Footer */
-footer {
-  background-color: #111111;
-  color: #ffffff;
-  padding: 10px 1%;
-  text-align: center;
-  margin-top: 64px;
+main h1 {
+    font-size: 32px;
+    color: var(--text-dark);
+    margin-bottom: 16px;
 }
 
-footer h1 {
-  font-size: 20px;
-  margin: 0 0 0.5rem 0;
-  color: #ffffff;
+main h2 {
+    font-size: 24px;
+    color: var(--color-accent);
+    margin-bottom: 12px;
 }
 
-footer p {
-  margin: 0;
-  font-size: 14px;
-  color: #9e8e8d;
+/* Forms and Inputs */
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--bg-supporting);
+    border-radius: 8px;
+    background-color: var(--bg-card);
+    color: var(--text-dark);
+    font-family: inherit;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s;
 }
 
-/*journal /*
-/* Container for all entries */
+input[type="text"]:focus, textarea:focus, select:focus {
+    border-color: var(--color-peach);
+}
+
+button, input[type="submit"] {
+    background-color: var(--color-accent);
+    color: var(--bg-base);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: var(--color-peach);
+    color: var(--text-dark);
+}
+
+/* Journal Entries Grid */
 .entries-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 equal columns: Left and Right! */
-  gap: 20px; /* Spacing between the boxes */
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns: Left and Right */
+    gap: 24px;
+    margin-top: 24px;
 }
 
 /* Style for each single box card */
 .entry-card {
-  border: 1px solid #f0e6df;
-  padding: 20px;
-  background-color: #b9b9b9cc;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--bg-supporting);
+    padding: 24px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(64, 50, 53, 0.04);
+    box-sizing: border-box;
 }
 
+/* Option 1: Black/Dark Footer */
+footer {
+    background-color: var(--text-dark); /* Dark base */
+    color: var(--bg-base);
+    padding: 32px 10%;
+    text-align: center;
+    margin-top: 64px;
+}
+
+footer h1 {
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    color: var(--color-peach); /* Peach accent */
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--bg-supporting); /* Tan helper text */
+}
+
+<<<<<<< HEAD
 /*    Resources Page
 =========================== */
+=======
+/* ===========================
+   Resources Page Styles (Synced with Remote)
+   =========================== */
+>>>>>>> origin/main
 
 .resources-hero {
-  text-align: center;
-  margin-bottom: 50px;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .resources-hero h1 {
-  font-size: 2.8rem;
-  color: #4a3e3d;
-  margin-bottom: 15px;
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
 }
 
 .resources-hero p {
-  max-width: 700px;
-  margin: auto;
-  color: #6e605f;
-  line-height: 1.6;
+    max-width: 700px;
+    margin: auto;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
 
 /* Resource Grid */
-
 .resource-grid {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
 }
 
 /* Individual Card */
-
 .resource-card {
-  background: white;
-
-  padding: 25px;
-
-  border-radius: 12px;
-
-  border: 1px solid #f0e6df;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
-  transition: 0.3s ease;
-
-  display: flex;
-  flex-direction: column;
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid var(--bg-supporting);
+    box-shadow: 0 4px 12px rgba(64, 50, 53, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .resource-card:hover {
-  transform: translateY(-6px);
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(64, 50, 53, 0.08);
 }
 
 .resource-type {
-  display: inline-block;
-
-  background: #c4a482;
-
-  color: white;
-
-  padding: 6px 14px;
-
-  border-radius: 20px;
-
-  font-size: 0.85rem;
-
-  margin-bottom: 15px;
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--color-accent);
+    color: var(--bg-base);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .resource-card h2 {
-  margin-top: 10px;
-
-  color: #4a3e3d;
+    margin-top: 10px;
+    color: var(--text-dark);
 }
 
 .resource-card p {
-  color: #6e605f;
-
-  line-height: 1.6;
-  flex-grow: 1;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
 .resource-card a {
-  display: inline-block;
-
-  margin-top: 15px;
-
-  color: #9e9146;
-
-  font-weight: bold;
-
-  text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--color-accent);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
 .resource-card a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
+    color: var(--color-peach);
 }
 
 .hero-button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 15px 30px;
-  background: #c4a482;
-  margin-bottom: 40px;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: var(--color-accent);
+    margin-bottom: 40px;
+    color: var(--bg-base);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .hero-button:hover {
-  background: #9e9146;
+    background: var(--color-peach);
+    color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+    .entries-list {
+        grid-template-columns: 1fr; /* Stack cards on mobile */
+    }
 }
 
 /* Guided Breathing
