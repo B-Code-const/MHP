@@ -69,7 +69,7 @@ include 'includes/header.php';
             echo "</div>";
         }
     } else {
-        echo "<p style='grid-column: 1 / -1;'>No entries logged yet. Write your first thought above! Ug.</p>";
+        echo "<p style='grid-column: 1 / -1;'>No entries logged yet. Write your first thought....</p>";
     }
     ?>
 </div>
