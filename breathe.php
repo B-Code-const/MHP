@@ -29,7 +29,7 @@ include 'includes/header.php';
 
             <div>
                 <h3>🌬️ Breathe In</h3>
-                <p>Slowly inhale through your nose for 4 seconds.</p>
+                <p>Slowly inhale through your nose.</p>
             </div>
 
             <div>
@@ -39,7 +39,7 @@ include 'includes/header.php';
 
             <div>
                 <h3>💨 Breathe Out</h3>
-                <p>Exhale slowly through your mouth for 6 seconds.</p>
+                <p>Exhale slowly through your mouth.</p>
             </div>
 
         </div>
