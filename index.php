@@ -39,6 +39,10 @@ if (!isset($_SESSION['last_checkin'])) {
 
         <h1>Welcome to MindSpace</h1>
 
+        <div style="display: inline-block; background-color: var(--bg-supporting); color: var(--text-dark); padding: 8px 16px; border-radius: 20px; font-weight: bold; margin-bottom: 20px; font-size: 14px;">
+            🔥 Streak: <?php echo $_SESSION['streak'] ?? 0; ?> Days
+        </div>
+
         <p>
             Take a moment to slow down, breathe, and focus on your well-being.
             MindSpace provides resources and daily wellness tools to support your
