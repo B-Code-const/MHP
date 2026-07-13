@@ -399,6 +399,109 @@ blockquote {
   max-width: 700px;
 }
 
+/* Affirmation Carousel
+=========================== */
+
+.affirmation-section {
+  text-align: center;
+
+  margin-top: 80px;
+}
+
+.affirmation-section h2 {
+  margin-bottom: 40px;
+}
+
+.affirmation-section input {
+  display: none;
+}
+
+.carousel {
+  position: relative;
+
+  max-width: 700px;
+
+  margin: auto;
+
+  min-height: 220px;
+}
+
+.slide {
+  display: none;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slide h3 {
+  font-size: 3rem;
+
+  margin-bottom: 15px;
+}
+
+.slide p {
+  font-size: 1.3rem;
+
+  color: #6e605f;
+
+  line-height: 1.6;
+}
+
+#slide1:checked ~ .carousel .slide1 {
+  display: block;
+}
+
+#slide2:checked ~ .carousel .slide2 {
+  display: block;
+}
+
+#slide3:checked ~ .carousel .slide3 {
+  display: block;
+}
+
+#slide4:checked ~ .carousel .slide4 {
+  display: block;
+}
+
+#slide5:checked ~ .carousel .slide5 {
+  display: block;
+}
+
+#slide6:checked ~ .carousel .slide6 {
+  display: block;
+}
+
+.carousel-nav {
+  margin-top: 25px;
+}
+
+.carousel-nav label {
+  display: inline-block;
+
+  width: 16px;
+
+  height: 16px;
+
+  border-radius: 50%;
+
+  background: #c4a482;
+
+  margin: 0 8px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.carousel-nav label:hover {
+  transform: scale(1.2);
+}
+
 /* Responsive Design
 =========================== */
 
