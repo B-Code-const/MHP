@@ -96,8 +96,7 @@ footer p {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* ===========================
-   Resources Page
+/*    Resources Page
 =========================== */
 
 .resources-hero {
@@ -212,4 +211,206 @@ footer p {
 
 .hero-button:hover {
   background: #9e9146;
+}
+
+/* Guided Breathing
+=========================== */
+
+.breathing-container {
+  text-align: center;
+}
+
+.breathing-container h1 {
+  font-size: 2.7rem;
+
+  margin-bottom: 15px;
+}
+
+.intro {
+  max-width: 700px;
+
+  margin: 0 auto 50px;
+
+  color: #6e605f;
+
+  line-height: 1.7;
+}
+
+.breathing-circle {
+  width: 260px;
+
+  height: 260px;
+
+  margin: 40px auto;
+
+  border-radius: 50%;
+
+  background: #c4a482;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  animation: breathe 8s ease-in-out infinite;
+}
+
+.inner-circle {
+  width: 170px;
+
+  height: 170px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.inner-circle p {
+  font-size: 1.4rem;
+
+  font-weight: bold;
+
+  color: #4a3e3d;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.breathing-steps {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+
+  margin: 60px 0;
+}
+
+.breathing-steps div {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 12px;
+
+  border: 1px solid #f0e6df;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+blockquote {
+  font-size: 1.3rem;
+
+  font-style: italic;
+
+  color: #6e605f;
+
+  margin: 40px auto;
+
+  max-width: 700px;
+}
+
+/* Responsive Design
+=========================== */
+
+/* Tablet  */
+
+@media (max-width: 992px) {
+  /* Resources Page */
+  .resource-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Breathing Page */
+  .breathing-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Mobile  */
+
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* Main Content */
+  main {
+    padding: 30px 20px;
+  }
+
+  /* Resources Page */
+  .resources-hero h1 {
+    font-size: 2rem;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Breathing Page */
+  .breathing-container h1 {
+    font-size: 2rem;
+  }
+
+  .intro {
+    margin-bottom: 35px;
+  }
+
+  .breathing-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .inner-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .inner-circle p {
+    font-size: 1.1rem;
+  }
+
+  .breathing-steps {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  blockquote {
+    font-size: 1.1rem;
+  }
+
+  /* Buttons */
+  .hero-button {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
 }
