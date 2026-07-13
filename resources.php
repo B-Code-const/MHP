@@ -1,18 +1,26 @@
 <?php
 $page_title = "Resources";
 
-include 'includes/header.php';
 include 'data/resources.php';
+include 'includes/header.php';
 ?>
 
 <main>
 
-    <h1>Mental Wellness Resources</h1>
+    <section class="resources-hero">
 
-    <p>
-        Browse trusted resources to help improve your mental health and
-        practice healthy digital wellness habits.
-    </p>
+        <h1>Mental Wellness Resources</h1>
+
+        <p>
+            Browse trusted resources to help improve your mental health and
+            practice healthy digital wellness habits.
+        </p>
+
+        <a href="journal.php" class="hero-button">
+            Start Today's Mood Journal
+        </a>
+
+    </section>
 
     <section class="resource-grid">
 
@@ -20,14 +28,22 @@ include 'data/resources.php';
 
             <article class="resource-card">
 
-                <h2><?= htmlspecialchars($resource["title"]); ?></h2>
+                <span class="resource-type">
+                    <?= htmlspecialchars($resource["type"]); ?>
+                </span>
 
-                <h3><?= htmlspecialchars($resource["type"]); ?></h3>
+                <h2>
+                    <?= htmlspecialchars($resource["title"]); ?>
+                </h2>
 
-                <p><?= htmlspecialchars($resource["description"]); ?></p>
+                <p>
+                    <?= htmlspecialchars($resource["description"]); ?>
+                </p>
 
-                <a href="<?= htmlspecialchars($resource["url"]); ?>" target="_blank">
-                    Learn More
+                <a
+                    href="<?= htmlspecialchars($resource["url"]); ?>"
+                    target="_blank">
+                    Learn More →
                 </a>
 
             </article>
