@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>NAME</h1>
+        <h1>MindSpace</h1>
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
@@ -17,4 +17,5 @@
                 <li><a href="breathe.php">Breathe</a></li>
             </ul>
         </nav>
-</header>
+    </header>
+</body>
