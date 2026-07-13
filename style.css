@@ -1,4 +1,14 @@
-/* style.css */
+/* style.css - Mindspace Design System */
+
+:root {
+    --bg-base: #FFF9F5;       /* 60% Warm White */
+    --bg-card: #ffffff;       /* Pure White for cards/header */
+    --bg-supporting: #E8D8CA; /* 30% Light Tan */
+    --color-peach: #F2A69A;   /* Peach Pink */
+    --color-accent: #B94A50;  /* 10% Muted Red Accent */
+    --text-dark: #403235;     /* Dark text */
+    --text-muted: #6e605f;    /* Muted text */
+}
 
 html, body {
     height: 100%;
@@ -6,27 +16,29 @@ html, body {
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #fcfbfa; /* Warm white/tan background */
-    color: #4a3e3d;            /* Soft dark brown text */
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-dark);
     display: flex;
     flex-direction: column;
+    line-height: 1.6;
 }
 
-/* Header Style*/
+/* Header Style */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 10%;
-    background-color: #ffffff;
-    border-bottom: 1px solid #f0e6df;
+    padding: 20px 10%;
+    background-color: var(--bg-card);
+    border-bottom: 2px solid var(--bg-supporting);
 }
 
 header h1 {
     margin: 0;
     font-size: 24px;
-    color: #c4a482; /* Warm tan logo/name color */
+    font-weight: 700;
+    color: var(--color-accent);
 }
 
 nav ul {
@@ -39,61 +51,115 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #6e605f;
-    font-weight: 500;
-    transition: color 0.3s;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding-bottom: 4px;
+    transition: color 0.3s, border-color 0.3s;
 }
 
-nav a:hover {
-    color: #9e9146; /* Light pink highlight on hover */
+nav a:hover, nav a.active {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
 }
 
 /* Main Content Area */
 main {
     padding: 48px 10%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    flex: 1; /* This pushes footer to bottom! */
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1; /* Pushes footer to bottom */
 }
 
-/* Option 1: Black Footer */
+main h1 {
+    font-size: 32px;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+main h2 {
+    font-size: 24px;
+    color: var(--color-accent);
+    margin-bottom: 12px;
+}
+
+/* Forms and Inputs */
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--bg-supporting);
+    border-radius: 8px;
+    background-color: var(--bg-card);
+    color: var(--text-dark);
+    font-family: inherit;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, textarea:focus, select:focus {
+    border-color: var(--color-peach);
+}
+
+button, input[type="submit"] {
+    background-color: var(--color-accent);
+    color: var(--bg-base);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: var(--color-peach);
+    color: var(--text-dark);
+}
+
+/* Journal Entries Grid */
+.entries-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns: Left and Right */
+    gap: 24px;
+    margin-top: 24px;
+}
+
+/* Style for each single box card */
+.entry-card {
+    border: 2px solid var(--bg-supporting);
+    padding: 24px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(64, 50, 53, 0.04);
+    box-sizing: border-box;
+}
+
+/* Option 1: Black/Dark Footer */
 footer {
-    background-color: #111111;
-    color: #ffffff;            
-    padding: 10px 1%;
+    background-color: var(--text-dark); /* Dark base */
+    color: var(--bg-base);
+    padding: 32px 10%;
     text-align: center;
     margin-top: 64px;
 }
 
 footer h1 {
     font-size: 20px;
-    margin: 0 0 0.5rem 0;
-    color: #ffffff;
+    margin: 0 0 8px 0;
+    color: var(--color-peach); /* Peach accent */
 }
 
 footer p {
     margin: 0;
     font-size: 14px;
-    color: #9e8e8d;
+    color: var(--bg-supporting); /* Tan helper text */
 }
 
-
-
-
-/*journal /*
-/* Container for all entries */
-.entries-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 equal columns: Left and Right! */
-    gap: 20px;                      /* Spacing between the boxes */
-    margin-top: 20px;
-}
-
-/* Style for each single box card */
-.entry-card {
-    border: 1px solid #f0e6df;
-    padding: 20px;
-    background-color: #b9b9b9cc;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+@media (max-width: 768px) {
+    .entries-list {
+        grid-template-columns: 1fr; /* Stack cards on mobile */
+    }
 }
