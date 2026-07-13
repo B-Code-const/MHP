@@ -1,6 +1,6 @@
     <footer>
-            <h1>MindSpace</h1>
-            <p>@2026 G13. All rights reserved.</p>
+        <h1>MindSpace</h1>
+        <p>&copy; 2026 MindSpace. All rights reserved. Ug.</p>
     </footer>
 </body>
 </html>
