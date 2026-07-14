@@ -50,18 +50,16 @@ include 'includes/header.php';
                 display: inline-block;
                 cursor: pointer;
                 opacity: 0.5;
-                transition: opacity 0.2s, transform 0.2s;
+                transition: opacity 0.2s;
                 padding: 5px;
             }
             /* Highlight the selected emoji */
             .mood-radios input[type="radio"]:checked + label {
                 opacity: 1;
-                transform: scale(1.3);
             }
             /* Hover effect */
             .mood-radios label:hover {
                 opacity: 0.8;
-                transform: scale(1.15);
             }
         </style>
 
