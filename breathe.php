@@ -5,6 +5,7 @@ include 'includes/header.php';
 ?>
 
 <main>
+    <!-- Guided breathing exercise introduction -->
 
     <section class="breathing-container">
 
@@ -15,7 +16,7 @@ include 'includes/header.php';
             and relax. Follow the animation below and breathe
             at a comfortable pace.
         </p>
-
+        <!-- Animated breathing circle controlled by CSS keyframes -->
         <div class="breathing-circle">
 
             <div class="inner-circle">
@@ -25,6 +26,7 @@ include 'includes/header.php';
             </div>
 
         </div>
+        <!-- Step-by-step breathing instructions -->
 
         <div class="breathing-steps">
 
@@ -44,6 +46,7 @@ include 'includes/header.php';
             </div>
 
         </div>
+        <!-- Motivational quote -->
 
         <blockquote>
             "A few deep breaths can make a big difference."
