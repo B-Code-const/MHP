@@ -555,8 +555,9 @@ blockquote {
 }
 
 @keyframes breatheAnimation {
-  0%, 100% {
-    transform: scale(1.0);
+  0%,
+  100% {
+    transform: scale(1);
   }
   40% {
     transform: scale(1.35);
