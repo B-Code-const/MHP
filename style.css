@@ -175,7 +175,7 @@ footer p {
 
 /*    Resources Page
 =========================== */
-
+/* Hero section introducing the resources page */
 .resources-hero {
   text-align: center;
   margin-bottom: 50px;
@@ -195,6 +195,7 @@ footer p {
 }
 
 /* Resource Grid */
+/*  grid layout for resource cards */
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -203,6 +204,7 @@ footer p {
 }
 
 /* Individual Card */
+/* Individual resource card styling */
 .resource-card {
   background: var(--bg-card);
   padding: 25px;
@@ -221,6 +223,7 @@ footer p {
   box-shadow: 0 8px 20px rgba(64, 50, 53, 0.08);
 }
 
+/* Category badge displayed at the top of each resource card */
 .resource-type {
   display: inline-block;
   align-self: flex-start;
@@ -257,7 +260,7 @@ footer p {
   text-decoration: underline;
   color: var(--color-peach);
 }
-
+/*  button used throughout the site */
 .hero-button {
   display: inline-block;
   margin-top: 25px;
@@ -287,6 +290,7 @@ footer p {
 /* Guided Breathing
 =========================== */
 
+/* Main container for the guided breathing exercise */
 .breathing-container {
   text-align: center;
 }
@@ -307,6 +311,7 @@ footer p {
   line-height: 1.7;
 }
 
+/* Outer animated breathing circle */
 .breathing-circle {
   width: 260px;
 
@@ -327,6 +332,7 @@ footer p {
   animation: breathe 8s ease-in-out infinite;
 }
 
+/* Inner circle displaying the breathing prompt */
 .inner-circle {
   width: 170px;
 
@@ -351,6 +357,7 @@ footer p {
   color: #4a3e3d;
 }
 
+/* Animation that expands and contracts the circle to guide breathing */
 @keyframes breathe {
   0% {
     transform: scale(0.8);
@@ -365,6 +372,7 @@ footer p {
   }
 }
 
+/* Grid layout for the breathing instruction cards */
 .breathing-steps {
   display: grid;
 
@@ -387,6 +395,7 @@ footer p {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* Motivational quote displayed below the breathing exercise */
 blockquote {
   font-size: 1.3rem;
 
@@ -402,6 +411,7 @@ blockquote {
 /* Affirmation Carousel
 =========================== */
 
+/* Container for the daily affirmation carousel */
 .affirmation-section {
   text-align: center;
 
@@ -416,6 +426,7 @@ blockquote {
   display: none;
 }
 
+/* Holds all affirmation slides */
 .carousel {
   position: relative;
 
@@ -426,6 +437,7 @@ blockquote {
   min-height: 220px;
 }
 
+/* Individual affirmation card */
 .slide {
   display: none;
 
@@ -452,6 +464,7 @@ blockquote {
   line-height: 1.6;
 }
 
+/* Display the selected affirmation based on the active radio button */
 #slide1:checked ~ .carousel .slide1 {
   display: block;
 }
@@ -476,6 +489,7 @@ blockquote {
   display: block;
 }
 
+/* Navigation dots used to switch between affirmations */
 .carousel-nav {
   margin-top: 25px;
 }

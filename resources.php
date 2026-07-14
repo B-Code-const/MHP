@@ -1,12 +1,12 @@
 <?php
 $page_title = "Resources";
-
+// Set the page title and load the resource data array.
 include 'data/resources.php';
 include 'includes/header.php';
 ?>
 
 <main>
-
+<!-- Hero section introducing the Mental Wellness Resources page -->
     <section class="resources-hero">
 
         <h1>Mental Wellness Resources</h1>
@@ -23,8 +23,9 @@ include 'includes/header.php';
     </section>
 
     <section class="resource-grid">
-
+<!-- Resource cards generated from the PHP resources array -->
         <?php foreach ($resources as $resource): ?>
+<!-- Loop through each resource and create a resource card. -->
 
             <article class="resource-card">
 
