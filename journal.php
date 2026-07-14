@@ -1,5 +1,6 @@
 <?php
 session_start(); 
+$submitted = false;
 if (!empty($_POST['entry'])) {
     $title = trim($_POST['title'] ?? '');
     if ($title === '') {
@@ -13,6 +14,7 @@ if (!empty($_POST['entry'])) {
         'content' => htmlspecialchars($_POST['entry']),
         'mood' => intval($_POST['mood'] ?? 4)
     ];
+    $submitted = true;
 }
 $page_title = "Journal";
 $active_page = "journal";
@@ -22,7 +24,14 @@ include 'includes/header.php';
 <main>
 
     <h1>Mood Journal</h1>
-    <p>This is the main content area of the journal page.\n write your thought out an describe how you currently feel</p>
+
+    <?php if ($submitted): ?>
+        <div style="background-color: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #c3e6cb;">
+            Your journal entry has been saved successfully!
+        </div>
+    <?php endif; ?>
+
+    <p>Write your thoughts out and describe how you currently feel.</p>
     <form action="journal.php" method="POST" style="width: 100%">
         <h5 style="text-align: center; color: #c4a482;">-
             <?php echo count($_SESSION['journal_entries'] ?? []) + 1; ?>-
@@ -30,11 +39,54 @@ include 'includes/header.php';
         <input id = "title" name = "title" type="text" style="width: 100%;" placeholder="Title (Optional)">
         <textarea id="entry" name="entry" style="width: 100%; height: 200px; margin: 10px 0; padding: 15px;"></textarea>
         <p style="font-weight: bold; margin-bottom: 5px;">Mood Scale:</p>
-        <div style="display: flex; align-items: center; gap: 20px; margin: 15px 0;">
-            <input type="range" id="mood-slider" name="mood" min="1" max="7" value="4" style="flex: 1;" oninput="updateMood(this.value)">
-            <img id="mood-emoji" src="images/emoji_5.png" alt="Current Mood" style="width: 60px; height: 60px;">
-        </div>
 
+        <style>
+            /* Hide the actual radio buttons */
+            .mood-radios input[type="radio"] {
+                display: none;
+            }
+            /* Style all emoji labels */
+            .mood-radios label {
+                display: inline-block;
+                cursor: pointer;
+                opacity: 0.5;
+                transition: opacity 0.2s, transform 0.2s;
+                padding: 5px;
+            }
+            /* Highlight the selected emoji */
+            .mood-radios input[type="radio"]:checked + label {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+            /* Hover effect */
+            .mood-radios label:hover {
+                opacity: 0.8;
+                transform: scale(1.15);
+            }
+        </style>
+
+        <div class="mood-radios" style="display: flex; justify-content: space-around; align-items: center; margin: 15px 0;">
+            <input type="radio" name="mood" id="mood1" value="1">
+            <label for="mood1"><img src="images/emoji_10.png" alt="Very Sad" style="width: 50px; height: 50px;"></label>
+
+            <input type="radio" name="mood" id="mood2" value="2">
+            <label for="mood2"><img src="images/emoji_7.png" alt="Sad" style="width: 50px; height: 50px;"></label>
+
+            <input type="radio" name="mood" id="mood3" value="3">
+            <label for="mood3"><img src="images/emoji_6.png" alt="Down" style="width: 50px; height: 50px;"></label>
+
+            <input type="radio" name="mood" id="mood4" value="4" checked>
+            <label for="mood4"><img src="images/emoji_5.png" alt="Neutral" style="width: 50px; height: 50px;"></label>
+
+            <input type="radio" name="mood" id="mood5" value="5">
+            <label for="mood5"><img src="images/emoji_4.png" alt="OK" style="width: 50px; height: 50px;"></label>
+
+            <input type="radio" name="mood" id="mood6" value="6">
+            <label for="mood6"><img src="images/emoji_2.png" alt="Good" style="width: 50px; height: 50px;"></label>
+
+            <input type="radio" name="mood" id="mood7" value="7">
+            <label for="mood7"><img src="images/emoji_1.png" alt="Great" style="width: 50px; height: 50px;"></label>
+        </div>
 
         <button type="submit">Submit</button>
 
@@ -76,21 +128,6 @@ include 'includes/header.php';
 
 
 </main>
-
-<script>
-function updateMood(val) {
-    const emojis = {
-        '1': 'images/emoji_10.png',
-        '2': 'images/emoji_7.png',
-        '3': 'images/emoji_6.png',
-        '4': 'images/emoji_5.png',
-        '5': 'images/emoji_4.png',
-        '6': 'images/emoji_2.png',
-        '7': 'images/emoji_1.png'
-    };
-    document.getElementById('mood-emoji').src = emojis[val];
-}
-</script>
 
 <?php
 include 'includes/footer.php';
